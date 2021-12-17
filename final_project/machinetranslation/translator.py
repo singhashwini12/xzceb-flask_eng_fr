@@ -29,18 +29,17 @@ except ApiException as ex:
 
 def english_to_french(english_text):
     """This function takes Enligh text as input and returns its French translation"""
-
-    if len(english_text)>0:
-        french_text = language_translator.translate(
-        text=english_text,
-        model_id='en-fr').get_result()
-        return french_text["translations"]
+    french_text = language_translator.translate(
+    text=english_text,
+    model_id='en-fr').get_result()
+    return french_text
+    #["translations"]
 
 def french_to_english(french_text):
     """This function takes French text as input and returns its English translation"""
 
-    if len(french_text)>0:
-        english_text = language_translator.translate(
-        text=french_text,
-        model_id='fr-en').get_result()
-        return english_text["translations"]
+    english_text = language_translator.translate(
+    text=french_text,
+    model_id='fr-en').get_result()
+    return english_text
+    #["translations"]
